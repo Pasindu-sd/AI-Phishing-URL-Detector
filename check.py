@@ -9,10 +9,10 @@ while True:
         break
 
     features = extract_features(url)
-
     result = model.predict([features])[0]
+    prob = model.predict_proba([features])[0][1]  # probability of phishing
 
     if result == 1:
-        print("PHISHING URL")
+        print(f"🚨 PHISHING URL - Risk: {prob*100:.2f}%")
     else:
-        print("SAFE URL")
+        print(f"✅ SAFE URL - Risk: {prob*100:.2f}%")
