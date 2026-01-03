@@ -6,7 +6,7 @@ model = joblib.load("model.pkl")
 while True:
     url = input("Enter URL (or 'exit' to quit): ")
     if url.lower() == "exit":
-        break 
+        break
 
     features = extract_features(url)
 
