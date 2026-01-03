@@ -13,6 +13,6 @@ while True:
     prob = model.predict_proba([features])[0][1]  # probability of phishing
 
     if result == 1:
-        print(f"🚨 PHISHING URL - Risk: {prob*100:.2f}%")
+        print(f"PHISHING URL - Risk: {prob*100:.2f}%")
     else:
-        print(f"✅ SAFE URL - Risk: {prob*100:.2f}%")
+        print(f"SAFE URL - Risk: {prob*100:.2f}%")
