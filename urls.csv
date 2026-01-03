@@ -1,0 +1,9 @@
+url,label
+http://paypal-secure-login.com,1
+http://verify-facebook-login.com,1
+http://bank-alert-confirm.com,1
+http://account-update-paypal.com,1
+https://www.google.com,0
+https://www.facebook.com,0
+https://www.microsoft.com,0
+https://www.amazon.com,0
