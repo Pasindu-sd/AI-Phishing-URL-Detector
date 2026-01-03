@@ -16,7 +16,7 @@ model = XGBClassifier(n_estimators=100, max_depth=5, learning_rate=0.1, eval_met
 model.fit(X_train, y_train)
 
 accuracy = model.score(X_test, y_test)
-print("Test Accuracy:", accuracy)
+print("Test Accuracy: {:.2f}%".format(accuracy * 100))
 
 joblib.dump(model, "model.pkl")
 
