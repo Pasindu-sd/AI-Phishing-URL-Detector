@@ -13,6 +13,6 @@ while True:
     result = model.predict([features])[0]
 
     if result == 1:
-        print("🚨 PHISHING URL")
+        print("PHISHING URL")
     else:
-        print("✅ SAFE URL")
+        print("SAFE URL")
