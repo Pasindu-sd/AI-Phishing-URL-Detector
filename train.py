@@ -39,7 +39,7 @@ test_accuracy = model.score(X_test, y_test)
 print(f"Train Accuracy: {train_accuracy * 100:.2f}%")
 print(f"Test Accuracy: {test_accuracy * 100:.2f}%")
 
-if train_accuracy > test_accuracy + 0.10:  # train accuracy test එකට වඩා 10%කින් වැඩිනම්
+if train_accuracy > test_accuracy + 0.10:
     print("Warning: Model might be overfitting!")
 else:
     print("Good: No significant overfitting detected.")
