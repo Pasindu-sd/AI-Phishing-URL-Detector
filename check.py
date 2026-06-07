@@ -1,14 +1,24 @@
 import joblib
 from features import extract_features
 
-model = joblib.load("model.pkl")
+model = joblib.load("url_model.pkl")
+
+
+def _match_model_features(features, trained_model):
+    expected_features = getattr(trained_model, "n_features_in_", len(features))
+    if len(features) < expected_features:
+        return features + [0.0] * (expected_features - len(features))
+    if len(features) > expected_features:
+        return features[:expected_features]
+    return features
 
 while True:
     url = input("Enter URL (or 'exit' to quit): ")
     if url.lower() == "exit":
         break
 
-    features = extract_features(url)
+    features = extract_features(url, force_enrichment=True)
+    features = _match_model_features(features, model)
     result = model.predict([features])[0]
     prob = model.predict_proba([features])[0][1]
     if result == 1:
